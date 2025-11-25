@@ -20,7 +20,7 @@ if (hostname === "localhost") {
 ) {
   API_URL = LAN_API;
 } else if (hostname.includes("vercel.app")) {
-  API_URL = "https://playstore-application-xxq1.vercel.app/api";
+   API_URL = "https://playstore-application-0-1-gttk.vercel.app/api";
 } else {
   API_URL = LAN_API;
 }
