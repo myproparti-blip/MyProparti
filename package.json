@@ -1,0 +1,60 @@
+{
+  "name": "proparti",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.4",
+    "@mui/material": "^7.3.4",
+    "@reduxjs/toolkit": "^2.10.1",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.27.5",
+    "antd-mobile": "^5.41.1",
+    "antd-mobile-icons": "^0.3.0",
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.3",
+    "expo": "~54.0.25",
+    "expo-image": "~3.0.10",
+    "expo-linking": "~8.0.9",
+    "expo-router": "~6.0.15",
+    "expo-splash-screen": "~31.0.11",
+    "expo-system-ui": "~6.0.8",
+    "expo-web-browser": "~15.0.9",
+    "react": "^18.2.0",
+    "react-activation": "^0.13.4",
+    "react-dom": "^18.2.0",
+    "react-native": "^0.81.5",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.9.4",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "cross-env CI=false INLINE_RUNTIME_CHUNK=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
