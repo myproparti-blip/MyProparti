@@ -20,7 +20,7 @@ if (hostname === "localhost") {
 ) {
   API_URL = LAN_API;
 } else if (hostname.includes("vercel.app")) {
-   API_URL = "https://my-pro-backend-9rlujszv5-propartis-projects.vercel.app/api";
+   API_URL = "my-pro-backend-7xjoaoycq-propartis-projects.vercel.app/api";
 } else {
   API_URL = LAN_API;
 }
