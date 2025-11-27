@@ -1,0 +1,1212 @@
+/* PropertyListings.css - Cleaned with Page Scrolling */
+.property-listings-container.mobile-view {
+  min-height: 100vh;
+  position: relative;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+/* Background with Property Image */
+.property-background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+/* Main Content Area - Flexible Layout */
+.main-content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* No Properties Section */
+.no-properties-section {
+  padding: 0 16px 100px;
+}
+
+/* Prominent Agents Section when no properties */
+.agents-section-prominent {
+  margin-top: 20px;
+  padding: 20px 0;
+}
+
+.section-header-prominent {
+  margin-bottom: 24px;
+}
+
+/* Properties Section */
+.properties-section {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+/* Agents Section (when properties exist) */
+.agents-section {
+  margin-top: 30px;
+  padding: 20px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced grid for better flexibility */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+/* Better responsive behavior */
+@media (max-width: 480px) {
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .properties-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .properties-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+}
+
+/* Improved empty state */
+.no-properties-section .adm-empty {
+  margin-bottom: 30px;
+}
+
+/* Better section spacing */
+.section-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-header h3 {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.background-overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+.property-price {
+  font-size: 16px;
+  color: #ff4d4f;
+  margin: 8px 0;
+  text-align: left;
+}
+
+/* Header Section */
+.header-section {
+  background: transparent;
+  padding: 8px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.menu-button {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.menu-button:active {
+  transform: scale(0.95);
+}
+
+.menu-icon {
+  font-size: 20px;
+  color: #333;
+}
+
+/* Filter Section - Moved to LEFT side */
+.filter-section-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.filter-button {
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.filter-button:active {
+  transform: scale(0.95);
+}
+
+.filter-badge {
+  display: none;
+}
+
+/* Mobile Filter Styles - FIXED SCROLLING */
+.mobile-filter-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.filter-scroll-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px 80px;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.mobile-filter-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 16px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.mobile-reset-btn, .mobile-apply-btn {
+  flex: 1;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mobile-reset-btn {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #d9d9d9;
+}
+
+.mobile-apply-btn {
+  background: #1677ff;
+  color: white;
+}
+
+/* Mobile Selector Styles */
+.mobile-selector-container .adm-selector {
+  gap: 8px;
+}
+
+.mobile-selector-container .adm-selector-item {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* Mobile Slider Styles */
+.mobile-slider-container {
+  padding: 8px 0;
+}
+
+.mobile-price-display {
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #1677ff;
+}
+
+.mobile-range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Mobile Amenities Chips - FIXED CLICK ISSUE */
+.mobile-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.mobile-amenity-chip {
+  padding: 8px 12px;
+  font-size: 12px;
+  border-radius: 16px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.mobile-amenity-chip.active {
+  background: #1677ff;
+  color: white;
+  border-color: #1677ff;
+}
+
+/* Filter Section Spacing */
+.filter-section {
+  margin-bottom: 24px;
+}
+
+.filter-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Mobile Results Count */
+.mobile-results-count {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  background: #fafafa;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0;
+  }
+  
+  .property-grid-item {
+    margin-bottom: 0;
+  }
+}
+
+/* Modal header improvements */
+.filter-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.filter-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.close-filter-btn {
+  color: #666;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Enhanced Filter Modal - FIXED SCROLLING */
+.filter-modal {
+  width: 90vw;
+  max-width: 400px;
+  height: 85vh;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.filter-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.filter-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.close-filter-btn {
+  color: #666;
+  padding: 8px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.close-filter-btn:active {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.filter-modal-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  background: white;
+  max-height: calc(85vh - 140px);
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.filter-section {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.filter-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.filter-section h4 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Price and Area Range - FIXED Smooth Scrolling */
+.price-range-container,
+.area-range-container {
+  padding: 0 8px;
+  margin-bottom: 16px;
+  touch-action: pan-y;
+}
+
+.price-range-display,
+.area-range-display {
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #1890ff;
+  font-size: 14px;
+  padding: 8px;
+  background: rgba(24, 144, 255, 0.1);
+  border-radius: 6px;
+}
+
+.price-range-labels,
+.area-range-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Enhanced Slider Styles with Smooth Scrolling */
+.filter-section .adm-slider {
+  margin: 0 8px;
+  padding: 20px 0;
+  touch-action: pan-y;
+}
+
+.filter-section .adm-slider-track {
+  background: #e6e6e6;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.filter-section .adm-slider-fill {
+  background: #1890ff;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.filter-section .adm-slider-thumb {
+  width: 24px;
+  height: 24px;
+  background: #1890ff;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.filter-section .adm-slider-thumb:active {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.4);
+}
+
+/* Amenities as Chips - UPDATED - FIXED CLICK ISSUE */
+.amenities-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.amenity-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border: 2px solid #f0f0f0;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.amenity-chip:active {
+  transform: scale(0.95);
+}
+
+.amenity-chip.active {
+  background: rgba(24, 144, 255, 0.1);
+  border-color: #1890ff;
+  color: #1890ff;
+  font-weight: 500;
+}
+
+.amenity-chip-icon {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.amenity-chip.active .amenity-chip-icon {
+  opacity: 1;
+}
+
+/* Enhanced Filter Actions - FIXED at Bottom */
+.filter-actions {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-top: 1px solid #f0f0f0;
+  background: white;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.filter-actions .adm-button {
+  flex: 1;
+  border-radius: 8px;
+  font-weight: 500;
+  height: 48px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-actions .apply-button {
+  background: #1890ff;
+  color: white;
+  font-weight: 600;
+}
+
+.filter-actions .apply-button:active {
+  background: #096dd9;
+  transform: scale(0.98);
+}
+
+.filter-actions .reset-button {
+  background: #f5f5f5;
+  color: #666;
+  border: 1px solid #d9d9d9;
+  font-weight: 500;
+}
+
+.filter-actions .reset-button:active {
+  background: #e6e6e6;
+  transform: scale(0.98);
+}
+
+/* Active Filter Chips - UPDATED */
+.active-filters-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.active-filters-container::-webkit-scrollbar {
+  display: none;
+}
+
+.active-filters-scroll {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  font-size: 12px;
+  color: #333;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.filter-chip:active {
+  transform: scale(0.95);
+}
+
+.filter-chip-remove {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.filter-chip-remove:active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.clear-filters-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ff4d4f;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.clear-filters-btn:active {
+  transform: scale(0.95);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Results Count */
+.results-count {
+  padding: 0 16px 16px;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+}
+
+/* Properties Grid - REMOVED UNWANTED SPACING */
+.properties-grid-container {
+  padding: 0 12px 20px !important;
+  margin: 0;
+}
+
+.property-chunk {
+  margin: 0;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  width: 100%;
+}
+
+.property-grid-item {
+  width: 100%;
+  margin: 0;
+}
+
+.property-card.grid-card {
+   border-radius: 12px !important;
+   overflow: hidden !important;
+   background: rgba(255, 255, 255, 0.15) !important;
+   backdrop-filter: blur(10px);
+   border: 1px solid rgba(255, 255, 255, 0.2) !important;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+   transition: all 0.3s ease;
+   margin: 0 !important;
+   display: flex !important;
+   flex-direction: column !important;
+   height: 320px !important;
+   position: relative !important;
+}
+
+.property-card.grid-card:active {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.transparent-card {
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.property-card-content {
+   display: flex !important;
+   flex-direction: column !important;
+   height: 100% !important;
+   min-height: 280px !important;
+}
+
+.property-image-container {
+   position: relative;
+   width: 100% !important;
+   height: 70px !important;
+   overflow: hidden;
+   flex-shrink: 0;
+}
+
+.property-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-fallback {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.fallback-icon {
+  font-size: 24px;
+  opacity: 0.7;
+}
+
+.listing-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+
+.price-overlay {
+  display: none;
+}
+
+.property-details {
+   padding: 6px;
+   display: flex;
+   flex-direction: column;
+   gap: 1px;
+}
+
+.property-title {
+   font-weight: 600;
+   font-size: 11px;
+   line-height: 1.2;
+   color: white;
+   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 1;
+   -webkit-box-orient: vertical;
+}
+
+.property-price {
+  font-weight: 700;
+  font-size: 13px;
+  color: #ffd700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.property-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.location-icon {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.property-features {
+   margin: 4px 0;
+}
+
+.property-areas {
+   margin: 2px 0 0 0;
+   flex-shrink: 0;
+}
+
+.feature-tag {
+  font-size: 9px;
+  padding: 2px 6px;
+  height: auto;
+  line-height: 1.2;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.property-footer {
+   display: flex !important;
+   justify-content: center !important;
+   align-items: center !important;
+   padding: 6px !important;
+   gap: 4px !important;
+   flex-shrink: 0 !important;
+   margin-top: auto !important;
+   width: 100% !important;
+   box-sizing: border-box !important;
+   position: absolute !important;
+   bottom: 0 !important;
+   left: 0 !important;
+}
+
+.property-stats {
+  display: flex;
+  gap: 8px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.stat-icon {
+  font-size: 10px;
+}
+
+.view-button {
+   border-radius: 4px;
+   font-size: 8px;
+   padding: 2px 5px;
+   height: auto;
+   line-height: 1.4;
+   background: rgba(255, 255, 255, 0.2);
+   backdrop-filter: blur(10px);
+   border: 1px solid rgba(255, 255, 255, 0.3);
+   color: white;
+   font-weight: 500;
+   white-space: nowrap;
+   flex-shrink: 0;
+}
+
+.view-button:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Advertisement Section */
+.advertisement-section {
+  margin: 20px 0;
+}
+
+.ad-card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.ad-content {
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ad-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 12px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ad-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ad-content p {
+  margin: 0 0 16px 0;
+  opacity: 0.9;
+  font-size: 14px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ad-content .adm-button {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-weight: 500;
+}
+
+.ad-content .adm-button:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Floating Action Button */
+.floating-action-button {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(24, 144, 255, 0.4);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.floating-action-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 15px rgba(24, 144, 255, 0.6);
+}
+
+.fab-icon {
+  font-size: 24px;
+  color: white;
+}
+
+/* Enhanced scrollbar for filter content */
+.filter-modal-content::-webkit-scrollbar,
+.amenities-chips-container::-webkit-scrollbar,
+.properties-grid-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.filter-modal-content::-webkit-scrollbar-track,
+.amenities-chips-container::-webkit-scrollbar-track,
+.properties-grid-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.filter-modal-content::-webkit-scrollbar-thumb,
+.amenities-chips-container::-webkit-scrollbar-thumb,
+.properties-grid-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.filter-modal-content::-webkit-scrollbar-thumb:hover,
+.amenities-chips-container::-webkit-scrollbar-thumb:hover,
+.properties-grid-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Hide scrollbar for active filters */
+.active-filters-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .properties-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .property-card.grid-card {
+     display: flex;
+     flex-direction: column;
+     height: 270px !important;
+   }
+   
+   .property-image-container {
+     height: 90px;
+     flex-shrink: 0;
+   }
+  
+  .property-details {
+    padding: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .property-title {
+    font-size: 11px;
+    line-height: 1.2;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
+  .property-price {
+    font-size: 12px;
+  }
+  
+  .ad-content {
+    padding: 16px;
+  }
+  
+  .ad-content h3 {
+    font-size: 16px;
+  }
+  
+  .ad-content p {
+    font-size: 13px;
+  }
+
+  .amenities-chips-container {
+    gap: 6px;
+  }
+  
+  .amenity-chip {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+   .properties-grid {
+     grid-template-columns: repeat(3, minmax(0, 1fr));
+     gap: 6px;
+     width: 100%;
+   }
+   
+   .property-card.grid-card {
+     display: flex;
+     flex-direction: column;
+     height: 255px !important;
+   }
+   
+   .property-image-container {
+     height: 80px;
+     flex-shrink: 0;
+   }
+  
+  .property-title {
+    font-size: 10px;
+    line-height: 1.2;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  
+  .property-details {
+    padding: 6px;
+    gap: 4px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .floating-action-button {
+    width: 56px;
+    height: 56px;
+    bottom: 70px;
+    right: 16px;
+  }
+  
+  .fab-icon {
+    font-size: 22px;
+  }
+
+  .filter-section-header {
+    padding: 0 12px;
+  }
+
+  .header-section {
+    padding: 12px;
+  }
+
+  .properties-grid-container {
+    padding: 0 12px 80px;
+  }
+  
+  .filter-modal-content {
+    padding: 12px;
+  }
+  
+  .filter-actions {
+    padding: 12px;
+  }
+  
+  .filter-actions .adm-button {
+    height: 44px;
+    font-size: 14px;
+  }
+  
+  .amenity-chip {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Animation for filter modal */
+.filter-modal {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus states for accessibility */
+.filter-button:focus-visible,
+.amenity-chip:focus-visible,
+.filter-actions .adm-button:focus-visible,
+.filter-chip:focus-visible {
+  outline: 2px solid #1890ff;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for all interactive elements */
+.adm-button,
+.menu-button,
+.filter-button,
+.property-card,
+.floating-action-button,
+.close-filter-btn,
+.filter-chip,
+.amenity-chip {
+  transition: all 0.3s ease;
+}
+
+/* Better text contrast for readability */
+.property-title,
+.property-price,
+.property-location {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Enhanced button styles */
+.view-button,
+.filter-button {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Fix scrolling behavior for main container */
+.property-listings-container.mobile-view::-webkit-scrollbar {
+  width: 4px;
+}
+
+.property-listings-container.mobile-view::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.1);
+}
+
+.property-listings-container.mobile-view::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+  border-radius: 2px;
+}
