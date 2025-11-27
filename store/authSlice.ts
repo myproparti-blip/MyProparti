@@ -20,7 +20,7 @@ interface AuthState {
 }
 
 // API URL - should match your backend
-const API_URL = 'http://192.168.29.78:5000/api';
+const API_URL = 'https://my-pro-backend.vercel.app/api';
 
 // Initial state
 const initialState: AuthState = {

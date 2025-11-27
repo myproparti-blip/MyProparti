@@ -2,7 +2,7 @@
   "expo": {
     "name": "myproparti",
     "slug": "myproparti",
-    "version": "1.0.0",
+    "version": "1.0.13",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myproparti",
@@ -17,6 +17,8 @@
       }
     },
     "android": {
+      "versionCode": 13,
+      "usesCleartextTraffic": true,
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -30,7 +32,8 @@
         "android.permission.READ_EXTERNAL_STORAGE",
         "android.permission.WRITE_EXTERNAL_STORAGE",
         "android.permission.ACCESS_MEDIA_LOCATION"
-      ]
+      ],
+      "package": "com.myproparti.myproparti"
     },
     "web": {
       "output": "static",

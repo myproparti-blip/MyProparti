@@ -27,9 +27,7 @@ const clearTokens = async () => {
 };
 
 // ==================== API Setup ====================
-const PC_LAN_IP = "192.168.29.78";
-const LAN_API = `http://${PC_LAN_IP}:5000/api`;
-const API_URL = LAN_API;
+const API_URL = "https://my-pro-backend.vercel.app/api";
 
 const api = axios.create({
   baseURL: API_URL,
@@ -162,10 +160,7 @@ export default function App(): JSX.Element {
   const isExitModalShowingRef = useRef(false);
 
   // ✅ Web URL configuration
-  const LAN_IP = "192.168.29.78";
-  const WEB_URL =
-    Platform.OS === "web" ? "http://localhost:3000" : `http://${LAN_IP}:3000?${CACHE_BUSTER}`;
-
+  const WEB_URL = "https://my-proparti.vercel.app";
   // ✅ Simplified Android Back Button Handler
   useEffect(() => {
     if (Platform.OS === "android") {
